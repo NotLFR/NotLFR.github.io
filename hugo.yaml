@@ -44,4 +44,17 @@ newsletter:
   showAuthor: true
 
   toc:
-  enable:true
+  enable: true
+
+
+  markup:
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+    ordered: false
+
+
+  goldmark:
+    renderer:
+      unsafe: true
+

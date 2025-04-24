@@ -38,3 +38,10 @@ analytics:
 
 newsletter:
   enable: false
+
+  blog:
+  enable: true
+  showAuthor: true
+
+  toc:
+  enable:true

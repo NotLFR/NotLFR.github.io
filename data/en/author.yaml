@@ -1,0 +1,18 @@
+# some information about you
+name: "Gannon O'Connor"
+nickname: "Gannon"
+image: "images/avatar.png"
+
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hi, I am"
+
+# give your contact information. they will be used in the footer
+contactInfo:
+  email: "oconnorgannon@gmail.com"
+  phone: "+1(716)725-1125"
+
+# a summary of what you do
+summary:
+- I am a dickhead 
+- blah
+- blah x2

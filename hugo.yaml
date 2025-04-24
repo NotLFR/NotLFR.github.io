@@ -52,6 +52,8 @@ newsletter:
     startLevel: 2
     endLevel: 6
     ordered: false
+    
+    markup:
   goldmark:
     renderer:
       unsafe: true

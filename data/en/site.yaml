@@ -9,3 +9,5 @@ customMenus:
   url: https://hossainemruz.gitbook.io/notes/
   hideFromNavbar: false
   showOnFooter: true
+
+navBarTitle: "Title"

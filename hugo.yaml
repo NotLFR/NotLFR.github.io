@@ -28,32 +28,27 @@ module:
     target: static/fonts
 
 params:
-
 gitRepo: https://github.com/NotLFR/NotLFR.github.io
 
-features:
 
+features:
 analytics:
   enabled: false
-
 newsletter:
   enable: false
-
   blog:
   enable: true
   showAuthor: true
-
   toc:
   enable: true
-
-
+#---------------
+  
+  
   markup:
   tableOfContents:
     startLevel: 2
     endLevel: 6
     ordered: false
-    
-    markup:
   goldmark:
     renderer:
       unsafe: true

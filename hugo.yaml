@@ -1,3 +1,6 @@
+baseURL: https://NotLFR.github.io
+
+
 module:
   hugoVersion:
     min: "0.146.0"
@@ -23,3 +26,15 @@ module:
     target: static/files
   - source: ../../node_modules/katex/dist/fonts
     target: static/fonts
+
+params:
+
+gitRepo: https://github.com/NotLFR/NotLFR.github.io
+
+features:
+
+analytics:
+  enabled: false
+
+newsletter:
+  enable: false

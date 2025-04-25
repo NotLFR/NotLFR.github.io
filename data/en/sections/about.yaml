@@ -1,0 +1,77 @@
+section:
+  name: About # Title of section (default: "")
+  id: about # url id/slug of section *Required*
+  enable: true # Boolean to determine if this section is enabled (default: false)
+  weight: 1 # Order to display section in (default: alphabetical followed by weight)
+  showOnNavbar: true # Boolean to determine if a link should be shown for this section on the navbar
+  template: sections/about.html # allows you to point to a specific template.
+
+# your designation
+designation: NMC Specialist
+# your company information
+company:
+  name: Avangrid
+  url: "https://www.avangrid.com/"
+  # a summary about you
+summary: 'Working in a NOC for ~3 years has taught me the importance of real-time problem solving, clear and direct lines of communication, and staying calm under pressure. I have developed a deeper understanding of Network infrastructure, Systems Monitoring, IR, and Root Cause Analysis. Being part of a 24/7 support team has sharpened my ability to prioritize tasks, collaborate across tiers of departments, & maintain a high level of situational awareness. This has also shown me how important uptime, security, and proactive monitoring are in keeping our services running smoothly. Overall my NOC experience has give me both the technical skills, and the mindset to handle complex challenges effectively, and effeciently.'
+
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "oconnorgannon@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://www.github.com/NotLFR"
+
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/gannon-o-connor-593871161/"
+  
+- name: TryHackMe
+  icon: "fab fa-stack-overflow"
+  url: "https://tryhackme.com/p/notLFr"
+
+# your resume. this file path should be relative to you "static" directory
+resourceLinks:
+- title: "My Resume"
+  url: "files/resume.pdf"
+
+badges:
+- type: certification
+  name: Google CyberSecurity
+  url: "https://coursera.org/share/58958d40d6381d20cd1d30d2a834eb47"
+  
+- type: soft-skill-indicator
+  name: Technical Skills
+  percentage: 80
+  color: blue
+
+- type: soft-skill-indicator
+  name: Teamwork
+  percentage: 90
+  color: yellow
+
+- type: soft-skill-indicator
+  name: Willingness To Learn
+  percentage: 95
+  color: orange
+
+- type: soft-skill-indicator
+  name: Communication
+  percentage: 85
+  color: pink
+
+- type: soft-skill-indicator
+  name: Deeper Understanding of Concepts
+  percentage: 85
+  color: green
+
+
+
+
+
+

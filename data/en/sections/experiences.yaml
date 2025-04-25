@@ -1,0 +1,54 @@
+section:
+  name: Experiences 
+  id: experiences 
+  enable: true
+  weight: 3
+  showOnNavbar: true
+
+
+# Your experiences
+experiences:
+- company:
+    name: Avangrid
+    url: "https://www.avangrid.com/"
+    location: Rochester Branch
+    overview: Avangrid is a Renewables site, generating over 5B Euros per year.
+  positions:
+  - designation: NMC Specialist
+    start: Dec 2024
+    # end: Dec 2020
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Managed Layers 1,2 & 3 troubleshooting for over 2000 renewable energy sites around the world
+    - Assisted with Troubleshooting a plethora of Network events, coming to resolutions in a timely manner.
+    - Provided Phone & Email support for over 8,000 clients & vendors utilizing Cisco, Nokia, Fortinet, and Ciena Routers and Switches
+    - Led several CyberSecurity focused projects such as real time Fortigate CVE Patching, Ciena upgrades, and Badge / Camera access.
+
+- company:
+    name: FirstLight Fiber
+    url: "https://www.firstlight.net/"
+    location: Remote
+    overview: FirstLight provides fiber-optic data, Internet, data center, cloud, unified communications, and managed services to enterprise and carrier customers throughout the Northeast and mid-Atlantic. Our 25,000-route-mile network connects more than 15,000 lit locations with access to an additional 125,000 locations.
+  positions:
+  - designation: NOC Technician
+    start: May 2024
+    end: Dec 2024
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Communicated with clients & coworkers to oversee 99.9% uptime in various equipment (phones, multiplexors, routers, switches, and cell towers)
+    - Troubleshot Network Outages, preformed Network maintenance, and provided Network Ops support for over 5,000 customers, businesses, and agencies.
+    - Monitored & Resolved various outages on over 50 10GB & 20 100GB fiber lines via SolarWinds, OcularIP, and other SLA Monitoring Solutions.
+    - Participated in continuous trouble ticket management (creation, troubleshooting, escalation, and resolution) to improve or maintain customer satisfaction.
+    - Oversaw DDoS mitigation / Troubleshooting process working alongside larger clients & engineers to determine root cause.
+  - designation: NOC Intern
+    start: October 2023
+    end: May 2024
+    responsibilities:
+    - asd
+    - asd
+    - asd
+    - asd
+
+    
+
+ 

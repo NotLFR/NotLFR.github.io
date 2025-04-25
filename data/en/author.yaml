@@ -1,7 +1,7 @@
 # some information about you
 name: "Gannon O'Connor"
 nickname: "Gannon"
-image: "images/Gannon.png"
+#image: "images/Gannon.png"
 
 # greeting message before your name. it will default to "Hi! I am" if not provided
 greeting: "Hi, I am"
@@ -12,7 +12,6 @@ contactInfo:
   phone: "+1(716)725-1125"
 
 # a summary of what you do
-summary:
-- I am a dickhead 
-- blah
-- blah x2
+summary: 
+- I am a Purple Team enthusiast
+- I am an aspiring Penetration Tester

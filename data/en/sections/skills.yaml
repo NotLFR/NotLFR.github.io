@@ -1,0 +1,59 @@
+# section information
+section:
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your Skills.
+# Give a summary of you each skill in the summary section.
+skills:
+- name: Kubernetes
+  summary: "Capable of deploying, managing application on Kubernetes. Experienced in writing Kubernetes controllers for CRDs."
+  url: "https://kubernetes.io/"
+
+- name: AD | GPO Install / Configuration
+  summary: "Capable of deploying, managing application on Kubernetes. Experienced in writing Kubernetes controllers for CRDs."
+  url: "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-"
+
+- name: Network Administration
+  summary: "Full rack setup with firewall, ACL, VLANs, ZBF, VPN, spanning tree, and server configurations (file, web, database, telephony, and print servers) on both Ubuntu and Windows Servers TCP / IP Stack"
+  
+- name: SolarWinds
+  summary: "Experience Managing, Configuring, and deploying SolarWinds alerts from Routers & Switches to a central page, monitored by the NMC" 
+  url: "https://documentation.solarwinds.com/en/success_center/ncm/content/ncm_administrator_guide.htm"
+
+- name: Cisco Meraki
+  summary: "Configured, Deployed, and Monitored 4 sites, monitoring over 500 critical services each"
+  url: "https://documentation.meraki.com/MX/Firewall_and_Traffic_Shaping/MX_Firewall_Settings"
+
+- name: RealMD
+  summary: "Configured Network Authentication / Domain Membership for several Linux boxes on a HomeLab enviroment"
+  url: "https://www.freedesktop.org/software/realmd/docs/realm.html"
+
+- name: BurpSuite
+  summary: "Experience configuring & effectively using BurpSuite to run Penetration Tests on Web Applications on CTF challenges."
+  url: "https://portswigger.net/burp/documentation/desktop"
+
+- name: NMap
+  summary: "Experience running port scans against a plethora of configued networks, looking for potential attack vectors on CTF challenges. "
+  url: "https://linux.die.net/man/1/nmap"
+
+- name: Metasploit
+  summary: "Capable of configuring, deploying, and accessing Payloads to exploit, gain footholds, and pivot latterly on compromised machines, and networks, during CTF challenges."
+  url: "https://docs.metasploit.com/"
+
+- name: BloodHound
+  summary: "Enumerated Active Directory attack vectors to attempt to find a foothold"
+  url: "https://github.com/SpecterOps/BloodHound"
+
+- name: EZTools
+  summary: "Utilized Tools developed by a former FBI Agent to better discover, analyze, and comprehend Windows Memory Forensic Evidence from CTF challenges."
+  url: "https://ericzimmerman.github.io/#!index.md"
+
+- name: Wireshark
+  summary: "Examined packets, cookies, and other session data to parse user data, during CTF challenges."
+  url: "https://www.wireshark.org/docs/"

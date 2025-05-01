@@ -8,29 +8,55 @@ section:
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
+
 degrees:
-- name: S.U.N.Y Alfred State
-  icon: fa-microscope
-  timeframe: 2019-2024
+- name: B.Sc. in Cyber Security
+  icon: fa-graduation-cap
+  timeframe: 2019-2003
   institution:
-    name: ABC University of Technology
+    name: SUNY Alfred State
     url: "#"
-    grade: #(optional)
-    scale: GPA
-    achieved: 3.1
-    outOf: 4.0
-  publications: #(optional)
-  - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    url: "#"
-  - title: Fusce eu augue ut odio porttitor pulvinar.
-    url: "#"
-  - title: Nullam vitae orci tincidunt purus viverra pulvinar.
-    url: "#"
-  extracurricularActivities: 
-  - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  - Fusce eu augue ut odio porttitor pulvinar.
-  custonSections: #(optional)
+  grade: #(optional)
+    scale: CGPA
+    achieved: 3.5
+    outOf: 4
+  takenCourses: #(optional)
+    # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
+    showGrades: true
+    collapseAfter: 3
+    courses:
+    - name: Networking Concepts & Host Security
+      achieved: 3.7
+      outOf: 4
+    - name: Digital Forensics (favorite class)
+      achieved: 4.00
+      outOf: 4
+    - name: Linux Security & Administration
+      achieved: 3.4
+      outOf: 4
+    - name: Database Concepts
+      achieved: 3.75
+      outOf: 4
+  extracurricularActivities: #(optional)
+  - Alfred State Cyber Security Team (Starter & Captain 2020-2022)
+  - Psi Delta Omega Fraternity (Treasurer, Vice President, & President)
+  customSections: #(optional)
     - name: Thesis
-      content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      content: Penetration Test on Local Business (preschool) - found & patched WordPress vulnerabilities & Socially Engineered P.I.I.
     - name: Supervisor
-      content: Fusce eu augue ut odio porttitor pulvinar.
+      content: Scott O'Connor
+- name: Higher Secondary School Certificate
+  icon: fa-university
+  timeframe: 2017-2019
+  institution:
+    name: Erie County Community College
+    url: "#"
+  grade: #(optional)
+    scale: GPA
+    achieved: 3.4
+    outOf: 4
+- name: CCNA & Kali Training
+  icon: fa-school
+  timeframe: 2017-2017
+  institution:
+    name: Erie 1 BOCES

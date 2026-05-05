@@ -6,7 +6,7 @@
   --accent: #b8a48a;
   --line: rgba(237, 233, 226, 0.1);
   --mono: "IBM Plex Mono", monospace;
-  --serif: "Fraunces", serif;
+  --serif: "TikTok Sans", sans-serif;
   --container: 72rem;
   --pad: clamp(1.5rem, 5vw, 4rem);
 }

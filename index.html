@@ -5,365 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>gannonis.fun — a slow corner of the web</title>
   <meta name="description" content="A small personal site. Light on polish. Heavy on opinion." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,200..700,0..100;1,9..144,200..700,0..100&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0a0908;
-      --fg: #f0e9dd;
-      --muted: #6b6760;
-      --accent: #d2480c;
-      --line: #2a201a;
-    }
 
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: 'Fraunces', Georgia, serif;
-      font-variation-settings: "opsz" 14, "SOFT" 30;
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Subtle film-grain overlay */
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 100;
-      opacity: 0.06;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-
-    .label {
-      font-family: 'IBM Plex Mono', ui-monospace, monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    /* Top strip */
-    .topbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 50;
-      padding: 1.25rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to bottom, rgba(10,9,8,0.85), rgba(10,9,8,0));
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-    }
-    .topbar .label { color: var(--fg); }
-    .topbar .dot {
-      display: inline-block;
-      width: 6px; height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-      margin: 0 0.6rem;
-      animation: pulse 2.4s ease-in-out infinite;
-      vertical-align: middle;
-    }
-    @keyframes pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      padding: 7rem 0 4rem;
-      overflow: hidden;
-    }
-    .hero__bg {
-      position: absolute;
-      top: 50%; left: 50%;
-      font-family: 'Fraunces', serif;
-      font-style: italic;
-      font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 200;
-      font-size: clamp(22rem, 60vw, 56rem);
-      color: var(--line);
-      opacity: 0.55;
-      pointer-events: none;
-      line-height: 0.8;
-      will-change: transform;
-      transform: translate(-50%, calc(-50% + var(--py, 0px)));
-      user-select: none;
-    }
-    .hero__content { position: relative; z-index: 1; max-width: 840px; }
-    .hero h1 {
-      font-family: 'Fraunces', serif;
-      font-variation-settings: "opsz" 144, "SOFT" 50, "wght" 350;
-      font-size: clamp(3rem, 9vw, 8rem);
-      line-height: 0.96;
-      letter-spacing: -0.03em;
-      margin: 1.25rem 0 1.75rem;
-    }
-    .hero h1 em {
-      font-style: italic;
-      font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 350;
-      color: var(--accent);
-    }
-    .hero__tag {
-      font-size: 1.15rem;
-      max-width: 34rem;
-      color: var(--fg);
-      font-style: italic;
-      font-variation-settings: "opsz" 24, "SOFT" 50, "wght" 350;
-      opacity: 0.85;
-    }
-    .hero__meta {
-      display: flex; gap: 2.5rem; margin-top: 3rem; flex-wrap: wrap;
-    }
-    .hero__meta-item { border-left: 1px solid var(--line); padding-left: 1rem; }
-    .hero__meta-item .label { display: block; margin-bottom: 0.3rem; }
-    .hero__meta-item span:not(.label) {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.85rem;
-      color: var(--fg);
-    }
-
-    /* SECTIONS */
-    section { padding: 8rem 0; position: relative; overflow: hidden; }
-    .section__head {
-      display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3.5rem;
-    }
-    .section__num {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.85rem; color: var(--accent); letter-spacing: 0.08em;
-    }
-    .section__rule { flex: 1; height: 1px; background: var(--line); }
-    .section__bg-num {
-      position: absolute;
-      right: -1.5rem; top: 3rem;
-      font-family: 'Fraunces', serif;
-      font-style: italic;
-      font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 200;
-      font-size: clamp(14rem, 40vw, 32rem);
-      color: var(--line);
-      opacity: 0.6;
-      pointer-events: none;
-      line-height: 0.8;
-      will-change: transform;
-      transform: translateY(var(--py, 0px));
-      user-select: none;
-    }
-
-    h2 {
-      font-family: 'Fraunces', serif;
-      font-variation-settings: "opsz" 144, "SOFT" 50, "wght" 400;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      max-width: 45rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .prose {
-      max-width: 38rem;
-      font-size: 1.08rem;
-      line-height: 1.75;
-      position: relative; z-index: 1;
-      font-variation-settings: "opsz" 18, "SOFT" 30, "wght" 380;
-    }
-    .prose p + p { margin-top: 1.25em; }
-    .prose em { color: var(--accent); font-style: italic; }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 4rem;
-      align-items: start;
-      position: relative; z-index: 1;
-    }
-    @media (max-width: 768px) {
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    }
-
-    .pull-quote {
-      font-family: 'Fraunces', serif;
-      font-style: italic;
-      font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 320;
-      font-size: clamp(1.5rem, 2.4vw, 2.1rem);
-      line-height: 1.3;
-      padding-left: 1.75rem;
-      border-left: 2px solid var(--accent);
-    }
-    .pull-quote span {
-      display: block;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 1.25rem;
-      font-style: normal;
-      font-variation-settings: normal;
-    }
-
-    /* THINGS LIST */
-    .things { list-style: none; position: relative; z-index: 1; }
-    .things li {
-      padding: 2rem 0;
-      border-top: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 4rem 1fr 6rem;
-      gap: 2rem;
-      align-items: baseline;
-      transition: padding 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    .things li:last-child { border-bottom: 1px solid var(--line); }
-    .things li:hover { padding-left: 1rem; }
-    .things li:hover .things__name { color: var(--accent); }
-    .things__num {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.85rem; color: var(--muted);
-    }
-    .things__name {
-      font-family: 'Fraunces', serif;
-      font-variation-settings: "opsz" 72, "SOFT" 50, "wght" 380;
-      font-size: clamp(1.4rem, 2.8vw, 2.1rem);
-      line-height: 1.15;
-      transition: color 0.3s ease;
-    }
-    .things__desc {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-top: 0.4rem;
-      max-width: 38rem;
-      font-variation-settings: "opsz" 14, "SOFT" 30, "wght" 380;
-    }
-    .things__year {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-align: right;
-    }
-    @media (max-width: 768px) {
-      .things li { grid-template-columns: 3rem 1fr; gap: 1rem; }
-      .things__year { grid-column: 2; text-align: left; margin-top: 0.6rem; }
-    }
-
-    /* NOW GRID */
-    .now {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem 4rem;
-      position: relative; z-index: 1;
-    }
-    @media (max-width: 768px) { .now { grid-template-columns: 1fr; } }
-    .now__item .label { display: block; margin-bottom: 0.85rem; }
-    .now__item h3 {
-      font-family: 'Fraunces', serif;
-      font-variation-settings: "opsz" 36, "SOFT" 50, "wght" 380;
-      font-size: 1.45rem;
-      line-height: 1.3;
-      margin-bottom: 0.4rem;
-    }
-    .now__item p { color: var(--muted); font-size: 0.95rem; }
-
-    /* MARQUEE */
-    .marquee {
-      overflow: hidden;
-      padding: 2.5rem 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      margin: 3rem 0 2rem;
-    }
-    .marquee__track {
-      display: flex;
-      gap: 3rem;
-      white-space: nowrap;
-      animation: scroll 32s linear infinite;
-      font-family: 'Fraunces', serif;
-      font-style: italic;
-      font-size: clamp(2rem, 5vw, 4rem);
-      font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 300;
-    }
-    .marquee__track > span { display: inline-flex; align-items: center; gap: 3rem; }
-    .marquee__track > span::after {
-      content: '✦';
-      color: var(--accent);
-      font-size: 0.5em;
-      font-style: normal;
-    }
-    @keyframes scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* FOOTER */
-    footer { padding: 2rem 0 3rem; }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      margin-top: 1rem;
-    }
-    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
-    .footer-grid h4 {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1rem;
-      font-weight: 400;
-    }
-    .footer-grid p { color: var(--muted); max-width: 26rem; font-size: 0.98rem; }
-    .footer-grid a {
-      color: var(--fg);
-      text-decoration: none;
-      display: block;
-      padding: 0.3rem 0;
-      transition: color 0.2s ease, transform 0.25s ease;
-      font-size: 1rem;
-    }
-    .footer-grid a:hover { color: var(--accent); transform: translateX(6px); }
-    .footer-meta {
-      margin-top: 4rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-    }
-
-    /* REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
-    .reveal.in { opacity: 1; transform: translateY(0); }
-
-    ::selection { background: var(--accent); color: var(--bg); }
-    ::-webkit-scrollbar { width: 0; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
-      .hero__bg, .section__bg-num { transform: translate(-50%, -50%) !important; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="topbar">
@@ -379,9 +27,12 @@
         <div class="hero__content">
           <div class="label">Welcome, traveler</div>
           <h1>Not really doing<br />much, but doing<br />it <em>on purpose</em>.</h1>
-          <p class="hero__tag">A page on the internet for whatever I happen to be making, breaking, or thinking about this week.</p>
+          <p class="hero__tag">A page on the internet for whatever I happen to be making, breaking, or thinking about this week. Light on polish. Heavy on opinion.</p>
           <div class="hero__meta">
             <div class="hero__meta-item">
+              <div class="label">Currently</div>
+              <span>Rochester, NY</span>
+            </div>
             <div class="hero__meta-item">
               <div class="label">Open to</div>
               <span>Conversation</span>
@@ -395,7 +46,7 @@
       </div>
     </section>
 
-    <!-- 01 -->
+    <!-- §01 -->
     <section id="about">
       <div class="section__bg-num" data-parallax="0.12">01</div>
       <div class="container">
@@ -417,7 +68,7 @@
       </div>
     </section>
 
-    <!-- 02 -->
+    <!-- §02 -->
     <section id="things">
       <div class="section__bg-num" data-parallax="0.12">02</div>
       <div class="container">
@@ -463,20 +114,35 @@
       </div>
     </section>
 
-    <!-- 03 -->
+    <!-- §03 -->
     <section id="now">
       <div class="section__bg-num" data-parallax="0.12">03</div>
       <div class="container">
         <div class="section__head">
-          <span class="section__num"> 03</span>
+          <span class="section__num">§ 03</span>
           <span class="label">what i'm into right now</span>
           <div class="section__rule"></div>
         </div>
         <div class="now">
           <div class="now__item reveal">
+            <span class="label">Listening</span>
+            <h3>Anything that sounds expensive on a 5.1 setup.</h3>
+            <p>Currently obsessed with room EQ. The rabbit hole is deep.</p>
+          </div>
+          <div class="now__item reveal">
+            <span class="label">Reading</span>
+            <h3>Datasheets, mostly. A novel sometimes.</h3>
+            <p>Soft commitment to finishing every PDF tab open.</p>
+          </div>
+          <div class="now__item reveal">
             <span class="label">Building</span>
             <h3>Something with a microcontroller and bad intentions.</h3>
             <p>Updates when there are updates.</p>
+          </div>
+          <div class="now__item reveal">
+            <span class="label">Avoiding</span>
+            <h3>The phrase "let's circle back."</h3>
+            <p>Also: meetings that should have been Discord pings.</p>
           </div>
         </div>
       </div>
@@ -500,13 +166,14 @@
         <div>
           <h4>Find me</h4>
           <a href="https://github.com/NotLFR">GitHub ↗</a>
+          <a href="mailto:hi@gannonis.fun">Email ↗</a>
           <a href="#">Discord ↗</a>
         </div>
         <div>
           <h4>Read again</h4>
-          <a href="#about"> 01 — Intro</a>
-          <a href="#things"> 02 — Work</a>
-          <a href="#now"> 03 — Currently</a>
+          <a href="#about">§ 01 — Intro</a>
+          <a href="#things">§ 02 — Work</a>
+          <a href="#now">§ 03 — Currently</a>
         </div>
       </div>
       <div class="footer-meta">
@@ -515,50 +182,5 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    // Live EST clock in topbar
-    const ts = document.getElementById('time-stamp');
-    function tick() {
-      const t = new Date().toLocaleTimeString('en-US', {
-        hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York', hour12: false
-      });
-      ts.textContent = `EST · ${t}`;
-    }
-    tick();
-    setInterval(tick, 30000);
-
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Parallax via CSS variable (--py) + requestAnimationFrame
-    const parallaxEls = document.querySelectorAll('[data-parallax]');
-    let ticking = false;
-
-    function updateParallax() {
-      for (const el of parallaxEls) {
-        const speed = parseFloat(el.dataset.parallax);
-        const rect = el.getBoundingClientRect();
-        // shift the element opposite to its scroll position to fake depth
-        const offset = -rect.top * speed;
-        el.style.setProperty('--py', `${offset.toFixed(1)}px`);
-      }
-      ticking = false;
-    }
-    function onScroll() {
-      if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    updateParallax();
-
-    // Scroll-triggered reveal
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      }
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  </script>
 </body>
 </html>

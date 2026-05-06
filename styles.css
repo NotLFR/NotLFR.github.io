@@ -15,6 +15,32 @@
 
 html { scroll-behavior: smooth; }
 
+/* ---- cursor ---- */
+body {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='7' fill='none' stroke='%23ff5c00' stroke-width='1.5'/%3E%3C/svg%3E") 10 10, auto;
+}
+
+a, button, [role="button"], .things li {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='7' fill='%23ff5c00'/%3E%3C/svg%3E") 10 10, pointer;
+}
+
+/* ---- text selection ---- */
+::selection {
+  background: rgba(255, 92, 0, 0.35);
+  color: var(--fg);
+}
+
+/* ---- scrollbar ---- */
+* {
+  scrollbar-color: #ff5c00 rgba(237, 233, 226, 0.04);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: rgba(237, 233, 226, 0.03); }
+::-webkit-scrollbar-thumb { background: #ff5c00; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 92, 0, 0.75); }
+
 body {
   background: var(--bg);
   color: var(--fg);

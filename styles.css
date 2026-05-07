@@ -125,7 +125,7 @@ body {
 .hero__orb--1 {
   width: clamp(24rem, 44vw, 58rem);
   height: clamp(24rem, 44vw, 58rem);
-  background: radial-gradient(circle, rgba(255, 92, 0, 0.055) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(255, 92, 0, 0.18) 0%, transparent 60%);
   top: -20%;
   right: -6%;
 }
@@ -133,7 +133,7 @@ body {
 .hero__orb--2 {
   width: clamp(14rem, 24vw, 32rem);
   height: clamp(14rem, 24vw, 32rem);
-  background: radial-gradient(circle, rgba(237, 233, 226, 0.025) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(237, 233, 226, 0.07) 0%, transparent 60%);
   bottom: 10%;
   left: 2%;
 }
